@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Rocket, Star, Github } from 'lucide-react';
+import { Rocket, Star, Play } from 'lucide-react';
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,6 +10,20 @@ export const HeroSection = () => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const handleGetStarted = () => {
+    // Start free trial functionality
+    console.log('Starting free trial...');
+    // You can add your free trial logic here
+    alert('Welcome to your free trial! 🚀');
+  };
+
+  const handleWatchDemo = () => {
+    // Show demo functionality
+    console.log('Showing demo...');
+    // You can add your demo logic here  
+    alert('Demo coming soon! 🎬');
+  };
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-20">
@@ -25,7 +39,7 @@ export const HeroSection = () => {
         {/* Main Headline */}
         <div className={`transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight">
-            <span className="inline-block mr-4">💼</span>Land Your Dream Job.
+            <span className="inline-block mr-4 text-6xl md:text-8xl lg:text-9xl filter drop-shadow-lg" style={{ color: '#f59e0b' }}>💼</span>Land Your Dream Job.
             <br />
             <span className="text-4xl md:text-6xl lg:text-7xl">Automatically.</span>
           </h1>
@@ -44,6 +58,7 @@ export const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button 
               size="lg" 
+              onClick={handleGetStarted}
               className="px-8 py-6 text-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 animate-pulse shadow-lg shadow-blue-500/25 text-white"
             >
               <Rocket className="w-5 h-5 mr-2" />
@@ -52,8 +67,10 @@ export const HeroSection = () => {
             <Button 
               size="lg" 
               variant="outline" 
+              onClick={handleWatchDemo}
               className="px-8 py-6 text-lg border-2 border-white/30 text-white hover:border-white/50 hover:bg-white/10 hover:text-white transform hover:scale-105 transition-all duration-300 bg-transparent"
             >
+              <Play className="w-4 h-4 mr-2" />
               Watch Demo
             </Button>
           </div>
@@ -67,7 +84,7 @@ export const HeroSection = () => {
                 {/* Resume Upload */}
                 <div className="text-center p-4 md:p-6 bg-white/5 rounded-2xl transform hover:scale-105 transition-all duration-300">
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
-                    <span className="text-xl md:text-2xl">📄</span>
+                    <span className="text-xl md:text-2xl" style={{ color: '#f59e0b' }}>📄</span>
                   </div>
                   <h3 className="font-semibold mb-2 text-sm md:text-base">Upload Resume</h3>
                   <p className="text-xs md:text-sm text-gray-400">Your existing resume</p>
@@ -81,7 +98,7 @@ export const HeroSection = () => {
                 {/* AI Processing */}
                 <div className="text-center p-4 md:p-6 bg-white/5 rounded-2xl transform hover:scale-105 transition-all duration-300">
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
-                    <span className="text-xl md:text-2xl animate-spin">🧠</span>
+                    <span className="text-xl md:text-2xl animate-spin" style={{ color: '#8b5cf6' }}>🧠</span>
                   </div>
                   <h3 className="font-semibold mb-2 text-sm md:text-base">AI Magic</h3>
                   <p className="text-xs md:text-sm text-gray-400">Tailors & applies</p>
@@ -95,7 +112,7 @@ export const HeroSection = () => {
                 {/* Job Success */}
                 <div className="text-center p-4 md:p-6 bg-white/5 rounded-2xl transform hover:scale-105 transition-all duration-300">
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
-                    <span className="text-xl md:text-2xl">✅</span>
+                    <span className="text-xl md:text-2xl" style={{ color: '#10b981' }}>✅</span>
                   </div>
                   <h3 className="font-semibold mb-2 text-sm md:text-base">Get Hired</h3>
                   <p className="text-xs md:text-sm text-gray-400">Land your dream job</p>
