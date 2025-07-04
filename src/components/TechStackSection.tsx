@@ -53,37 +53,37 @@ export const TechStackSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 px-4 bg-black/20">
+    <section ref={sectionRef} className="py-12 md:py-20 px-4 bg-black/10">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
             Tech Stack & Resume Power
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
             Built with cutting-edge technologies that will make your resume stand out
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {/* Tech Stack */}
           <Card className={`
-            bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-white/10 backdrop-blur-sm
+            bg-black/20 backdrop-blur-xl border border-white/10
             transform transition-all duration-1000
             ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}
-          `}>
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-                <Star className="w-6 h-6 text-yellow-400" />
+          `} style={{ backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}>
+            <CardContent className="p-6 md:p-8">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-white flex items-center gap-2">
+                <Star className="w-5 h-5 md:w-6 md:h-6 text-yellow-400" />
                 Built With
               </h3>
               
-              <div className="flex flex-wrap gap-3 mb-8">
+              <div className="flex flex-wrap gap-2 md:gap-3 mb-6 md:mb-8">
                 {techStack.map((tech, index) => (
                   <Badge 
                     key={tech.name}
                     className={`
-                      ${tech.color} border-0 px-4 py-2 text-sm font-medium
-                      transform transition-all duration-500 hover:scale-110
+                      ${tech.color} border-0 px-3 py-1 md:px-4 md:py-2 text-xs md:text-sm font-medium
+                      transform transition-all duration-500 hover:scale-110 backdrop-blur-sm
                       ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
                     `}
                     style={{ transitionDelay: `${index * 100}ms` }}
@@ -93,19 +93,19 @@ export const TechStackSection = () => {
                 ))}
               </div>
 
-              <h4 className="text-lg font-semibold mb-4 text-white">Skills Demonstrated:</h4>
+              <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-white">Skills Demonstrated:</h4>
               <div className="space-y-2">
                 {skills.map((skill, index) => (
                   <div 
                     key={skill}
                     className={`
-                      flex items-center gap-3 text-gray-300
+                      flex items-center gap-3 text-sm md:text-base text-gray-300
                       transform transition-all duration-500
                       ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'}
                     `}
                     style={{ transitionDelay: `${(index + techStack.length) * 100}ms` }}
                   >
-                    <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                    <Check className="w-3 h-3 md:w-4 md:h-4 text-green-400 flex-shrink-0" />
                     <span>{skill}</span>
                   </div>
                 ))}
@@ -115,36 +115,36 @@ export const TechStackSection = () => {
 
           {/* Resume Benefits */}
           <Card className={`
-            bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 backdrop-blur-sm
+            bg-black/20 backdrop-blur-xl border border-purple-500/20
             transform transition-all duration-1000 delay-300
             ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}
-          `}>
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-                <Github className="w-6 h-6 text-purple-400" />
+          `} style={{ backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}>
+            <CardContent className="p-6 md:p-8">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-white flex items-center gap-2">
+                <Github className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
                 Career Impact
               </h3>
               
-              <div className="space-y-4 mb-8">
+              <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                 {benefits.map((benefit, index) => (
                   <div 
                     key={benefit}
                     className={`
-                      flex items-center gap-3 p-4 bg-white/5 rounded-lg
+                      flex items-start gap-3 p-3 md:p-4 bg-white/5 backdrop-blur-sm rounded-lg
                       transform transition-all duration-500 hover:bg-white/10
                       ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
                     `}
                     style={{ transitionDelay: `${(index + 5) * 100}ms` }}
                   >
-                    <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></div>
-                    <span className="text-white font-medium">✅ {benefit}</span>
+                    <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-white font-medium text-sm md:text-base">✅ {benefit}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="p-6 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl border border-purple-500/30">
-                <h4 className="font-bold text-white mb-2">🚀 Pro Tip:</h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
+              <div className="p-4 md:p-6 bg-purple-500/10 backdrop-blur-sm rounded-xl border border-purple-500/20">
+                <h4 className="font-bold text-white mb-2 text-sm md:text-base">🚀 Pro Tip:</h4>
+                <p className="text-gray-300 text-xs md:text-sm leading-relaxed">
                   This project demonstrates your ability to integrate multiple cutting-edge AI technologies, 
                   showing employers you're at the forefront of tech innovation.
                 </p>
